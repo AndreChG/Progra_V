@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_TORNEOModelStoreContainer" CdmEntityContainer="BD_TORNEOEntities">
+    <EntitySetMapping Name="Canton">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.Canton">
+        <MappingFragment StoreEntitySet="Canton">
+          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+          <ScalarProperty Name="id_CantonInec" ColumnName="id_CantonInec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distrito">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.Distrito">
+        <MappingFragment StoreEntitySet="Distrito">
+          <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
+          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+          <ScalarProperty Name="id_DistritoInec" ColumnName="id_DistritoInec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO">
+        <MappingFragment StoreEntitySet="EQUIPO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE_EQUIPO" ColumnName="NOMBRE_EQUIPO" />
+          <ScalarProperty Name="FECHA_FUNDACION" ColumnName="FECHA_FUNDACION" />
+          <ScalarProperty Name="ID_PROVINCIA" ColumnName="ID_PROVINCIA" />
+          <ScalarProperty Name="ID_CANTON" ColumnName="ID_CANTON" />
+          <ScalarProperty Name="ID_DISTRITO" ColumnName="ID_DISTRITO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO_JUGADOR">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_JUGADOR">
+        <MappingFragment StoreEntitySet="EQUIPO_JUGADOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_JUGADOR" ColumnName="ID_JUGADOR" />
+          <ScalarProperty Name="ID_EQUIPO" ColumnName="ID_EQUIPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO_PARTIDO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_PARTIDO">
+        <MappingFragment StoreEntitySet="EQUIPO_PARTIDO">
+          <ScalarProperty Name="ID_PARTIDO" ColumnName="ID_PARTIDO" />
+          <ScalarProperty Name="ID_EQUIPO_CASA" ColumnName="ID_EQUIPO_CASA" />
+          <ScalarProperty Name="ID_EQUIPO_VISITA" ColumnName="ID_EQUIPO_VISITA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUIPO_TORNEO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_TORNEO">
+        <MappingFragment StoreEntitySet="EQUIPO_TORNEO">
+          <ScalarProperty Name="ID_EQUIPO_TORNEO" ColumnName="ID_EQUIPO_TORNEO" />
+          <ScalarProperty Name="ID_TORNEO" ColumnName="ID_TORNEO" />
+          <ScalarProperty Name="PUNTOS" ColumnName="PUNTOS" />
+          <ScalarProperty Name="ID_EQUIPO" ColumnName="ID_EQUIPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GOLES">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.GOLES">
+        <MappingFragment StoreEntitySet="GOLES">
+          <ScalarProperty Name="GOLES1" ColumnName="GOLES" />
+          <ScalarProperty Name="ID_MARCADOR" ColumnName="ID_MARCADOR" />
+          <ScalarProperty Name="ID_JUGADOR" ColumnName="ID_JUGADOR" />
+          <ScalarProperty Name="ID_TORNEO" ColumnName="ID_TORNEO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JUGADOR">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.JUGADOR">
+        <MappingFragment StoreEntitySet="JUGADOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
+          <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
+          <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+          <ScalarProperty Name="TELEFONO_PRINCIPAL" ColumnName="TELEFONO_PRINCIPAL" />
+          <ScalarProperty Name="TELEFONO_SECUNDARIO" ColumnName="TELEFONO_SECUNDARIO" />
+          <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+          <ScalarProperty Name="ID_PROVINCIA" ColumnName="ID_PROVINCIA" />
+          <ScalarProperty Name="ID_CANTON" ColumnName="ID_CANTON" />
+          <ScalarProperty Name="ID_DISTRITO" ColumnName="ID_DISTRITO" />
+          <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARTIDO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.PARTIDO">
+        <MappingFragment StoreEntitySet="PARTIDO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FECHA_PARTIDO" ColumnName="FECHA_PARTIDO" />
+          <ScalarProperty Name="GOL_EQUIPO_CASA" ColumnName="GOL_EQUIPO_CASA" />
+          <ScalarProperty Name="GOL_EQUIPO_VISITA" ColumnName="GOL_EQUIPO_VISITA" />
+          <ScalarProperty Name="ID_TORNEO" ColumnName="ID_TORNEO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincia">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.Provincia">
+        <MappingFragment StoreEntitySet="Provincia">
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TORNEO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.TORNEO">
+        <MappingFragment StoreEntitySet="TORNEO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE_TORNETO" ColumnName="NOMBRE_TORNETO" />
+          <ScalarProperty Name="FECHA_INI" ColumnName="FECHA_INI" />
+          <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+          <ScalarProperty Name="CANTIDAD_EQUIPOS" ColumnName="CANTIDAD_EQUIPOS" />
+          <ScalarProperty Name="DEDICATORIA" ColumnName="DEDICATORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO_USUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
+          <ScalarProperty Name="ULT_FECHA_INGRESO" ColumnName="ULT_FECHA_INGRESO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_EliminaCanton" FunctionName="BD_TORNEOModel.Store.sp_EliminaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_InsertaCanton" FunctionName="BD_TORNEOModel.Store.sp_InsertaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_ModificaCanton" FunctionName="BD_TORNEOModel.Store.sp_ModificaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaCantones" FunctionName="BD_TORNEOModel.Store.sp_RetornaCantones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaCantones_Result">
+          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+          <ScalarProperty Name="id_CantonInec" ColumnName="id_CantonInec" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaCantonesID" FunctionName="BD_TORNEOModel.Store.sp_RetornaCantonesID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaCantonesID_Result">
+          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+          <ScalarProperty Name="id_CantonInec" ColumnName="id_CantonInec" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaDistritos" FunctionName="BD_TORNEOModel.Store.sp_RetornaDistritos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaDistritos_Result">
+          <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
+          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Canton" ColumnName="Canton" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+          <ScalarProperty Name="id_DistritoInec" ColumnName="id_DistritoInec" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaProvincias" FunctionName="BD_TORNEOModel.Store.sp_RetornaProvincias">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaProvincias_Result">
+          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblUsuario">
+      <EntityTypeMapping TypeName="BD_TORNEOModel.tblUsuario">
+        <MappingFragment StoreEntitySet="tblUsuario">
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuario_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioCorreoPwd" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuarioCorreoPwd">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuarioCorreoPwd_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioID" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuarioID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuarioID_Result">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
