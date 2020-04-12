@@ -14,6 +14,12 @@ namespace Campeonato.Modelos
     
     public partial class Distrito
     {
+        public Distrito()
+        {
+            this.EQUIPO = new HashSet<EQUIPO>();
+            this.JUGADOR = new HashSet<JUGADOR>();
+        }
+    
         public int id_Distrito { get; set; }
         public Nullable<int> id_Canton { get; set; }
         public string nombre { get; set; }
@@ -25,5 +31,7 @@ namespace Campeonato.Modelos
         public Nullable<int> id_DistritoInec { get; set; }
     
         public virtual Canton Canton { get; set; }
+        public virtual ICollection<EQUIPO> EQUIPO { get; set; }
+        public virtual ICollection<JUGADOR> JUGADOR { get; set; }
     }
 }

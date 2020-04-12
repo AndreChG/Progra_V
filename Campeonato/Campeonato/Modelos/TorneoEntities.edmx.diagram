@@ -29,6 +29,13 @@
         <AssociationConnector Association="BD_TORNEOModel.FK_GOLES_TORNEO" ManuallyRouted="false" />
         <AssociationConnector Association="BD_TORNEOModel.FK_PARTIDO_TORNEO" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BD_TORNEOModel.tblUsuario" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_Canton_Provincia" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Canton" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Canton" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Distrito" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Distrito" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Provincia" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Provincia" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

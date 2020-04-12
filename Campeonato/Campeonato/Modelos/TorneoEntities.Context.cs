@@ -176,5 +176,127 @@ namespace Campeonato.Modelos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaUsuarioID_Result>("sp_RetornaUsuarioID", id_UsuarioParameter);
         }
+    
+        public virtual int sp_InsertaNuevoJugador(Nullable<int> cedula, string genero, Nullable<System.DateTime> fechanacimiento, string nombre, string primerApellido, string segundoApellido, Nullable<int> telPrincipal, Nullable<int> telSecundario, string correoElectronico, Nullable<int> idProv, Nullable<int> idCanton, Nullable<int> idDistrito, Nullable<int> edad, string detalleDireccion)
+        {
+            var cedulaParameter = cedula.HasValue ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(int));
+    
+            var generoParameter = genero != null ?
+                new ObjectParameter("Genero", genero) :
+                new ObjectParameter("Genero", typeof(string));
+    
+            var fechanacimientoParameter = fechanacimiento.HasValue ?
+                new ObjectParameter("Fechanacimiento", fechanacimiento) :
+                new ObjectParameter("Fechanacimiento", typeof(System.DateTime));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("PrimerApellido", primerApellido) :
+                new ObjectParameter("PrimerApellido", typeof(string));
+    
+            var segundoApellidoParameter = segundoApellido != null ?
+                new ObjectParameter("SegundoApellido", segundoApellido) :
+                new ObjectParameter("SegundoApellido", typeof(string));
+    
+            var telPrincipalParameter = telPrincipal.HasValue ?
+                new ObjectParameter("TelPrincipal", telPrincipal) :
+                new ObjectParameter("TelPrincipal", typeof(int));
+    
+            var telSecundarioParameter = telSecundario.HasValue ?
+                new ObjectParameter("TelSecundario", telSecundario) :
+                new ObjectParameter("TelSecundario", typeof(int));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var idProvParameter = idProv.HasValue ?
+                new ObjectParameter("IdProv", idProv) :
+                new ObjectParameter("IdProv", typeof(int));
+    
+            var idCantonParameter = idCanton.HasValue ?
+                new ObjectParameter("idCanton", idCanton) :
+                new ObjectParameter("idCanton", typeof(int));
+    
+            var idDistritoParameter = idDistrito.HasValue ?
+                new ObjectParameter("idDistrito", idDistrito) :
+                new ObjectParameter("idDistrito", typeof(int));
+    
+            var edadParameter = edad.HasValue ?
+                new ObjectParameter("edad", edad) :
+                new ObjectParameter("edad", typeof(int));
+    
+            var detalleDireccionParameter = detalleDireccion != null ?
+                new ObjectParameter("DetalleDireccion", detalleDireccion) :
+                new ObjectParameter("DetalleDireccion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertaNuevoJugador", cedulaParameter, generoParameter, fechanacimientoParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, telPrincipalParameter, telSecundarioParameter, correoElectronicoParameter, idProvParameter, idCantonParameter, idDistritoParameter, edadParameter, detalleDireccionParameter);
+        }
+    
+        public virtual int sp_Jugador_Update(Nullable<int> cedula, string genero, Nullable<System.DateTime> fechanacimiento, string nombre, string primerApellido, string segundoApellido, Nullable<int> telPrincipal, Nullable<int> telSecundario, string correoElectronico, Nullable<int> idProv, Nullable<int> idCanton, Nullable<int> idDistrito, Nullable<int> edad, string detalleDireccion)
+        {
+            var cedulaParameter = cedula.HasValue ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(int));
+    
+            var generoParameter = genero != null ?
+                new ObjectParameter("Genero", genero) :
+                new ObjectParameter("Genero", typeof(string));
+    
+            var fechanacimientoParameter = fechanacimiento.HasValue ?
+                new ObjectParameter("Fechanacimiento", fechanacimiento) :
+                new ObjectParameter("Fechanacimiento", typeof(System.DateTime));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("PrimerApellido", primerApellido) :
+                new ObjectParameter("PrimerApellido", typeof(string));
+    
+            var segundoApellidoParameter = segundoApellido != null ?
+                new ObjectParameter("SegundoApellido", segundoApellido) :
+                new ObjectParameter("SegundoApellido", typeof(string));
+    
+            var telPrincipalParameter = telPrincipal.HasValue ?
+                new ObjectParameter("TelPrincipal", telPrincipal) :
+                new ObjectParameter("TelPrincipal", typeof(int));
+    
+            var telSecundarioParameter = telSecundario.HasValue ?
+                new ObjectParameter("TelSecundario", telSecundario) :
+                new ObjectParameter("TelSecundario", typeof(int));
+    
+            var correoElectronicoParameter = correoElectronico != null ?
+                new ObjectParameter("CorreoElectronico", correoElectronico) :
+                new ObjectParameter("CorreoElectronico", typeof(string));
+    
+            var idProvParameter = idProv.HasValue ?
+                new ObjectParameter("IdProv", idProv) :
+                new ObjectParameter("IdProv", typeof(int));
+    
+            var idCantonParameter = idCanton.HasValue ?
+                new ObjectParameter("idCanton", idCanton) :
+                new ObjectParameter("idCanton", typeof(int));
+    
+            var idDistritoParameter = idDistrito.HasValue ?
+                new ObjectParameter("idDistrito", idDistrito) :
+                new ObjectParameter("idDistrito", typeof(int));
+    
+            var edadParameter = edad.HasValue ?
+                new ObjectParameter("edad", edad) :
+                new ObjectParameter("edad", typeof(int));
+    
+            var detalleDireccionParameter = detalleDireccion != null ?
+                new ObjectParameter("DetalleDireccion", detalleDireccion) :
+                new ObjectParameter("DetalleDireccion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Jugador_Update", cedulaParameter, generoParameter, fechanacimientoParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, telPrincipalParameter, telSecundarioParameter, correoElectronicoParameter, idProvParameter, idCantonParameter, idDistritoParameter, edadParameter, detalleDireccionParameter);
+        }
     }
 }

@@ -54,6 +54,9 @@
                     <p>
                         <asp:HyperLink ID="hplJugadores" runat="server" NavigateUrl="~/Formularios/frmJugadores.aspx">Configurar Jugadores</asp:HyperLink>
                     </p>
+                    <p>
+                        <asp:HyperLink ID="hpleditajugadores" runat="server" NavigateUrl="~/Formularios/frmEditarjugadores.aspx">Edición de jugadores</asp:HyperLink>
+                    </p>
                 </div>
             </div>
         </div>

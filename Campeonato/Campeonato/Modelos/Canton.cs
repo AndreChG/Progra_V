@@ -17,6 +17,8 @@ namespace Campeonato.Modelos
         public Canton()
         {
             this.Distrito = new HashSet<Distrito>();
+            this.EQUIPO = new HashSet<EQUIPO>();
+            this.JUGADOR = new HashSet<JUGADOR>();
         }
     
         public int id_Canton { get; set; }
@@ -30,5 +32,8 @@ namespace Campeonato.Modelos
         public int id_CantonInec { get; set; }
     
         public virtual ICollection<Distrito> Distrito { get; set; }
+        public virtual Provincia Provincia { get; set; }
+        public virtual ICollection<EQUIPO> EQUIPO { get; set; }
+        public virtual ICollection<JUGADOR> JUGADOR { get; set; }
     }
 }

@@ -33,5 +33,8 @@ namespace Campeonato.Modelos
         public virtual ICollection<EQUIPO_PARTIDO> EQUIPO_PARTIDO { get; set; }
         public virtual ICollection<EQUIPO_PARTIDO> EQUIPO_PARTIDO1 { get; set; }
         public virtual ICollection<EQUIPO_TORNEO> EQUIPO_TORNEO { get; set; }
+        public virtual Canton Canton { get; set; }
+        public virtual Distrito Distrito { get; set; }
+        public virtual Provincia Provincia { get; set; }
     }
 }

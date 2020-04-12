@@ -14,6 +14,13 @@ namespace Campeonato.Modelos
     
     public partial class Provincia
     {
+        public Provincia()
+        {
+            this.Canton = new HashSet<Canton>();
+            this.EQUIPO = new HashSet<EQUIPO>();
+            this.JUGADOR = new HashSet<JUGADOR>();
+        }
+    
         public int id_Provincia { get; set; }
         public string nombre { get; set; }
         public string usuarioCrea { get; set; }
@@ -21,5 +28,9 @@ namespace Campeonato.Modelos
         public string usuarioModifica { get; set; }
         public Nullable<System.DateTime> fechaModifica { get; set; }
         public string vc_Estado { get; set; }
+    
+        public virtual ICollection<Canton> Canton { get; set; }
+        public virtual ICollection<EQUIPO> EQUIPO { get; set; }
+        public virtual ICollection<JUGADOR> JUGADOR { get; set; }
     }
 }

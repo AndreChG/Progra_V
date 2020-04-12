@@ -77,9 +77,8 @@
   </EntityType>
   <EntityType Name="JUGADOR">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="IDENTIFICACION" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="APELLIDO1" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="APELLIDO2" Type="varchar" MaxLength="50" Nullable="false" />
@@ -170,6 +169,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Canton_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="Canton" Type="Self.Canton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="Canton">
+        <PropertyRef Name="id_Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_Canton">
+    <End Role="Canton" Type="Self.Canton" Multiplicity="1" />
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="id_Canton" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_Distrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="id_Distrito" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_EQUIPO_JUGADOR_EQUIPO">
     <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
     <End Role="EQUIPO_JUGADOR" Type="Self.EQUIPO_JUGADOR" Multiplicity="*" />
@@ -179,18 +214,6 @@
       </Principal>
       <Dependent Role="EQUIPO_JUGADOR">
         <PropertyRef Name="ID_EQUIPO" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_EQUIPO_JUGADOR_JUGADOR">
-    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="1" />
-    <End Role="EQUIPO_JUGADOR" Type="Self.EQUIPO_JUGADOR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="JUGADOR">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="EQUIPO_JUGADOR">
-        <PropertyRef Name="ID_JUGADOR" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -230,6 +253,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_EQUIPO_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_PROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_EQUIPO_TORNEO_EQUIPO">
     <End Role="EQUIPO" Type="Self.EQUIPO" Multiplicity="1" />
     <End Role="EQUIPO_TORNEO" Type="Self.EQUIPO_TORNEO" Multiplicity="*" />
@@ -266,6 +301,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_JUGADOR_Canton">
+    <End Role="Canton" Type="Self.Canton" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="id_Canton" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_Distrito">
+    <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="id_Distrito" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_DISTRITO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_Provincia">
+    <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+    <End Role="JUGADOR" Type="Self.JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_PROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PARTIDO_TORNEO">
     <End Role="TORNEO" Type="Self.TORNEO" Multiplicity="1" />
     <End Role="PARTIDO" Type="Self.PARTIDO" Multiplicity="*" />
@@ -285,6 +356,38 @@
     <Parameter Name="id_Provincia" Type="int" Mode="In" />
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="id_CantonInec" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertaNuevoJugador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="int" Mode="In" />
+    <Parameter Name="Genero" Type="varchar" Mode="In" />
+    <Parameter Name="Fechanacimiento" Type="date" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+    <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+    <Parameter Name="TelPrincipal" Type="int" Mode="In" />
+    <Parameter Name="TelSecundario" Type="int" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="IdProv" Type="int" Mode="In" />
+    <Parameter Name="idCanton" Type="int" Mode="In" />
+    <Parameter Name="idDistrito" Type="int" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="DetalleDireccion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Jugador_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="int" Mode="In" />
+    <Parameter Name="Genero" Type="varchar" Mode="In" />
+    <Parameter Name="Fechanacimiento" Type="date" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+    <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+    <Parameter Name="TelPrincipal" Type="int" Mode="In" />
+    <Parameter Name="TelSecundario" Type="int" Mode="In" />
+    <Parameter Name="CorreoElectronico" Type="varchar" Mode="In" />
+    <Parameter Name="IdProv" Type="int" Mode="In" />
+    <Parameter Name="idCanton" Type="int" Mode="In" />
+    <Parameter Name="idDistrito" Type="int" Mode="In" />
+    <Parameter Name="edad" Type="int" Mode="In" />
+    <Parameter Name="DetalleDireccion" Type="varchar" Mode="In" />
   </Function>
   <Function Name="sp_ModificaCanton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Canton" Type="int" Mode="In" />
@@ -338,12 +441,20 @@
       <End Role="Canton" EntitySet="Canton" />
       <End Role="Distrito" EntitySet="Distrito" />
     </AssociationSet>
+    <AssociationSet Name="FK_Canton_Provincia" Association="Self.FK_Canton_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Canton" EntitySet="Canton" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Canton" Association="Self.FK_EQUIPO_Canton">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Distrito" Association="Self.FK_EQUIPO_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
     <AssociationSet Name="FK_EQUIPO_JUGADOR_EQUIPO" Association="Self.FK_EQUIPO_JUGADOR_EQUIPO">
       <End Role="EQUIPO" EntitySet="EQUIPO" />
-      <End Role="EQUIPO_JUGADOR" EntitySet="EQUIPO_JUGADOR" />
-    </AssociationSet>
-    <AssociationSet Name="FK_EQUIPO_JUGADOR_JUGADOR" Association="Self.FK_EQUIPO_JUGADOR_JUGADOR">
-      <End Role="JUGADOR" EntitySet="JUGADOR" />
       <End Role="EQUIPO_JUGADOR" EntitySet="EQUIPO_JUGADOR" />
     </AssociationSet>
     <AssociationSet Name="FK_EQUIPO_PARTIDO_EQUIPO" Association="Self.FK_EQUIPO_PARTIDO_EQUIPO">
@@ -358,6 +469,10 @@
       <End Role="PARTIDO" EntitySet="PARTIDO" />
       <End Role="EQUIPO_PARTIDO" EntitySet="EQUIPO_PARTIDO" />
     </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Provincia" Association="Self.FK_EQUIPO_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
     <AssociationSet Name="FK_EQUIPO_TORNEO_EQUIPO" Association="Self.FK_EQUIPO_TORNEO_EQUIPO">
       <End Role="EQUIPO" EntitySet="EQUIPO" />
       <End Role="EQUIPO_TORNEO" EntitySet="EQUIPO_TORNEO" />
@@ -369,6 +484,18 @@
     <AssociationSet Name="FK_GOLES_TORNEO" Association="Self.FK_GOLES_TORNEO">
       <End Role="TORNEO" EntitySet="TORNEO" />
       <End Role="GOLES" EntitySet="GOLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Canton" Association="Self.FK_JUGADOR_Canton">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Distrito" Association="Self.FK_JUGADOR_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Provincia" Association="Self.FK_JUGADOR_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
     </AssociationSet>
     <AssociationSet Name="FK_PARTIDO_TORNEO" Association="Self.FK_PARTIDO_TORNEO">
       <End Role="TORNEO" EntitySet="TORNEO" />

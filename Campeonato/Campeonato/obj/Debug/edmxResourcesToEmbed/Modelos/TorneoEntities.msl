@@ -84,7 +84,6 @@
     <EntitySetMapping Name="JUGADOR">
       <EntityTypeMapping TypeName="BD_TORNEOModel.JUGADOR">
         <MappingFragment StoreEntitySet="JUGADOR">
-          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
           <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
@@ -268,5 +267,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_InsertaNuevoJugador" FunctionName="BD_TORNEOModel.Store.sp_InsertaNuevoJugador" />
+    <FunctionImportMapping FunctionImportName="sp_Jugador_Update" FunctionName="BD_TORNEOModel.Store.sp_Jugador_Update" />
   </EntityContainerMapping>
 </Mapping>

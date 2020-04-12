@@ -121,6 +121,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\frmEditarjugadores.aspx" />
     <Content Include="Formularios\frmInicio.aspx" />
     <Content Include="Formularios\frmJugadores.aspx" />
     <Content Include="Formularios\frmMantenimiento.aspx" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="Formularios\Campeonato.Master.designer.cs">
       <DependentUpon>Campeonato.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEditarjugadores.aspx.cs">
+      <DependentUpon>frmEditarjugadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEditarjugadores.aspx.designer.cs">
+      <DependentUpon>frmEditarjugadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmInicio.aspx.cs">
       <DependentUpon>frmInicio.aspx</DependentUpon>

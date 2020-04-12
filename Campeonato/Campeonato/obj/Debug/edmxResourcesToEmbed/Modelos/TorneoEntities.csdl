@@ -14,6 +14,9 @@
     <Property Name="vc_Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
     <Property Name="id_CantonInec" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Distrito" Relationship="Self.Distrito_ref_Canton" FromRole="Canton" ToRole="Distrito" />
+    <NavigationProperty Name="Provincia" Relationship="BD_TORNEOModel.FK_Canton_Provincia" FromRole="Canton" ToRole="Provincia" />
+    <NavigationProperty Name="EQUIPO" Relationship="BD_TORNEOModel.FK_EQUIPO_Canton" FromRole="Canton" ToRole="EQUIPO" />
+    <NavigationProperty Name="JUGADOR" Relationship="BD_TORNEOModel.FK_JUGADOR_Canton" FromRole="Canton" ToRole="JUGADOR" />
   </EntityType>
   <EntityType Name="Distrito">
     <Key>
@@ -29,6 +32,8 @@
     <Property Name="vc_Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
     <Property Name="id_DistritoInec" Type="Int32" />
     <NavigationProperty Name="Canton" Relationship="Self.Distrito_ref_Canton" FromRole="Distrito" ToRole="Canton" />
+    <NavigationProperty Name="EQUIPO" Relationship="BD_TORNEOModel.FK_EQUIPO_Distrito" FromRole="Distrito" ToRole="EQUIPO" />
+    <NavigationProperty Name="JUGADOR" Relationship="BD_TORNEOModel.FK_JUGADOR_Distrito" FromRole="Distrito" ToRole="JUGADOR" />
   </EntityType>
   <EntityType Name="EQUIPO">
     <Key>
@@ -44,6 +49,9 @@
     <NavigationProperty Name="EQUIPO_PARTIDO" Relationship="Self.FK_EQUIPO_PARTIDO_EQUIPO" FromRole="EQUIPO" ToRole="EQUIPO_PARTIDO" />
     <NavigationProperty Name="EQUIPO_PARTIDO1" Relationship="Self.FK_EQUIPO_PARTIDO_EQUIPO1" FromRole="EQUIPO" ToRole="EQUIPO_PARTIDO" />
     <NavigationProperty Name="EQUIPO_TORNEO" Relationship="Self.FK_EQUIPO_TORNEO_EQUIPO" FromRole="EQUIPO" ToRole="EQUIPO_TORNEO" />
+    <NavigationProperty Name="Canton" Relationship="BD_TORNEOModel.FK_EQUIPO_Canton" FromRole="EQUIPO" ToRole="Canton" />
+    <NavigationProperty Name="Distrito" Relationship="BD_TORNEOModel.FK_EQUIPO_Distrito" FromRole="EQUIPO" ToRole="Distrito" />
+    <NavigationProperty Name="Provincia" Relationship="BD_TORNEOModel.FK_EQUIPO_Provincia" FromRole="EQUIPO" ToRole="Provincia" />
   </EntityType>
   <EntityType Name="EQUIPO_JUGADOR">
     <Key>
@@ -109,6 +117,9 @@
     <Property Name="GENERO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="DIRECCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="EQUIPO_JUGADOR" Relationship="Self.FK_EQUIPO_JUGADOR_JUGADOR" FromRole="JUGADOR" ToRole="EQUIPO_JUGADOR" />
+    <NavigationProperty Name="Canton" Relationship="BD_TORNEOModel.FK_JUGADOR_Canton" FromRole="JUGADOR" ToRole="Canton" />
+    <NavigationProperty Name="Distrito" Relationship="BD_TORNEOModel.FK_JUGADOR_Distrito" FromRole="JUGADOR" ToRole="Distrito" />
+    <NavigationProperty Name="Provincia" Relationship="BD_TORNEOModel.FK_JUGADOR_Provincia" FromRole="JUGADOR" ToRole="Provincia" />
   </EntityType>
   <EntityType Name="PARTIDO">
     <Key>
@@ -133,6 +144,9 @@
     <Property Name="usuarioModifica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fechaModifica" Type="DateTime" Precision="3" />
     <Property Name="vc_Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Canton" Relationship="BD_TORNEOModel.FK_Canton_Provincia" FromRole="Provincia" ToRole="Canton" />
+    <NavigationProperty Name="EQUIPO" Relationship="BD_TORNEOModel.FK_EQUIPO_Provincia" FromRole="Provincia" ToRole="EQUIPO" />
+    <NavigationProperty Name="JUGADOR" Relationship="BD_TORNEOModel.FK_JUGADOR_Provincia" FromRole="Provincia" ToRole="JUGADOR" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -384,6 +398,66 @@
     <FunctionImport Name="sp_RetornaUsuarioID" ReturnType="Collection(BD_TORNEOModel.sp_RetornaUsuarioID_Result)">
       <Parameter Name="id_Usuario" Mode="In" Type="Int32" />
     </FunctionImport>
+    <AssociationSet Name="FK_Canton_Provincia" Association="BD_TORNEOModel.FK_Canton_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="Canton" EntitySet="Canton" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Canton" Association="BD_TORNEOModel.FK_EQUIPO_Canton">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Canton" Association="BD_TORNEOModel.FK_JUGADOR_Canton">
+      <End Role="Canton" EntitySet="Canton" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Distrito" Association="BD_TORNEOModel.FK_EQUIPO_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Distrito" Association="BD_TORNEOModel.FK_JUGADOR_Distrito">
+      <End Role="Distrito" EntitySet="Distrito" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPO_Provincia" Association="BD_TORNEOModel.FK_EQUIPO_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="EQUIPO" EntitySet="EQUIPO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JUGADOR_Provincia" Association="BD_TORNEOModel.FK_JUGADOR_Provincia">
+      <End Role="Provincia" EntitySet="Provincia" />
+      <End Role="JUGADOR" EntitySet="JUGADOR" />
+    </AssociationSet>
+    <FunctionImport Name="sp_InsertaNuevoJugador">
+      <Parameter Name="Cedula" Mode="In" Type="Int32" />
+      <Parameter Name="Genero" Mode="In" Type="String" />
+      <Parameter Name="Fechanacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+      <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+      <Parameter Name="TelPrincipal" Mode="In" Type="Int32" />
+      <Parameter Name="TelSecundario" Mode="In" Type="Int32" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="IdProv" Mode="In" Type="Int32" />
+      <Parameter Name="idCanton" Mode="In" Type="Int32" />
+      <Parameter Name="idDistrito" Mode="In" Type="Int32" />
+      <Parameter Name="edad" Mode="In" Type="Int32" />
+      <Parameter Name="DetalleDireccion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Jugador_Update">
+      <Parameter Name="Cedula" Mode="In" Type="Int32" />
+      <Parameter Name="Genero" Mode="In" Type="String" />
+      <Parameter Name="Fechanacimiento" Mode="In" Type="DateTime" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+      <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+      <Parameter Name="TelPrincipal" Mode="In" Type="Int32" />
+      <Parameter Name="TelSecundario" Mode="In" Type="Int32" />
+      <Parameter Name="CorreoElectronico" Mode="In" Type="String" />
+      <Parameter Name="IdProv" Mode="In" Type="Int32" />
+      <Parameter Name="idCanton" Mode="In" Type="Int32" />
+      <Parameter Name="idDistrito" Mode="In" Type="Int32" />
+      <Parameter Name="edad" Mode="In" Type="Int32" />
+      <Parameter Name="DetalleDireccion" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_RetornaCantones_Result">
     <Property Type="Int32" Name="id_Canton" Nullable="false" />
@@ -461,4 +535,88 @@
     <Property Type="String" Name="contrasena" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="tipoUsuario" Nullable="false" MaxLength="100" />
   </ComplexType>
+  <Association Name="FK_Canton_Provincia">
+    <End Type="BD_TORNEOModel.Provincia" Role="Provincia" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.Canton" Role="Canton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="Canton">
+        <PropertyRef Name="id_Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_Canton">
+    <End Type="BD_TORNEOModel.Canton" Role="Canton" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.EQUIPO" Role="EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="id_Canton" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_Canton">
+    <End Type="BD_TORNEOModel.Canton" Role="Canton" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.JUGADOR" Role="JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canton">
+        <PropertyRef Name="id_Canton" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_Distrito">
+    <End Type="BD_TORNEOModel.Distrito" Role="Distrito" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.EQUIPO" Role="EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="id_Distrito" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_CANTON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_Distrito">
+    <End Type="BD_TORNEOModel.Distrito" Role="Distrito" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.JUGADOR" Role="JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito">
+        <PropertyRef Name="id_Distrito" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_DISTRITO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPO_Provincia">
+    <End Type="BD_TORNEOModel.Provincia" Role="Provincia" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.EQUIPO" Role="EQUIPO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="EQUIPO">
+        <PropertyRef Name="ID_PROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JUGADOR_Provincia">
+    <End Type="BD_TORNEOModel.Provincia" Role="Provincia" Multiplicity="1" />
+    <End Type="BD_TORNEOModel.JUGADOR" Role="JUGADOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="id_Provincia" />
+      </Principal>
+      <Dependent Role="JUGADOR">
+        <PropertyRef Name="ID_PROVINCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

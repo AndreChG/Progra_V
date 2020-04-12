@@ -36,5 +36,8 @@ namespace Campeonato.Modelos
         public string DIRECCION { get; set; }
     
         public virtual ICollection<EQUIPO_JUGADOR> EQUIPO_JUGADOR { get; set; }
+        public virtual Canton Canton { get; set; }
+        public virtual Distrito Distrito { get; set; }
+        public virtual Provincia Provincia { get; set; }
     }
 }
