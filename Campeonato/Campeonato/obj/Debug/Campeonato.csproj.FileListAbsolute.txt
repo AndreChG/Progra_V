@@ -98,7 +98,7 @@ C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\bin\Newtonsoft.
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\bin\Antlr3.Runtime.pdb
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\obj\Debug\Campeonato.csprojAssemblyReference.cache
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\obj\Debug\Campeonato.csproj.CopyComplete
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\obj\Debug\Campeonato.dll
 C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\obj\Debug\Campeonato.pdb
+C:\Users\usuario\Documents\GitHub\Progra_V\Campeonato\Campeonato\obj\Debug\Campeonato.csprojAssemblyReference.cache

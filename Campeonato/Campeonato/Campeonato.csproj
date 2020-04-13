@@ -127,6 +127,7 @@
     <Content Include="Formularios\frmMantenimiento.aspx" />
     <Content Include="Formularios\frmReportes.aspx" />
     <Content Include="Formularios\frmSesion.aspx" />
+    <Content Include="Formularios\JugadorModifica.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -137,27 +138,44 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Formularios\Campeonato.Master" />
-    <EntityDeploy Include="Modelos\TorneoEntities.edmx">
+    <EntityDeploy Include="Modelos\TorneoBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TorneoEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>TorneoBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Modelos\TorneoEntities.edmx.diagram">
-      <DependentUpon>TorneoEntities.edmx</DependentUpon>
+    <Content Include="Modelos\Proyecto_BD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Proyecto_BD.edmx</DependentUpon>
+      <LastGenOutput>Proyecto_BD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelos\Proyecto_BD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Proyecto_BD.edmx</DependentUpon>
+      <LastGenOutput>Proyecto_BD.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelos\TorneoBD.edmx.diagram">
+      <DependentUpon>TorneoBD.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Modelos\Proyecto_BD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Proyecto_BD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelos\Proyecto_BD.edmx.diagram">
+      <DependentUpon>Proyecto_BD.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Imagenes\PS2.png" />
     <Content Include="Imagenes\Ps3.png" />
     <Content Include="Imagenes\PS4.png" />
     <Content Include="Imagenes\psx.png" />
-    <Content Include="Modelos\TorneoEntities.Context.tt">
+    <Content Include="Modelos\TorneoBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TorneoEntities.Context.cs</LastGenOutput>
-      <DependentUpon>TorneoEntities.edmx</DependentUpon>
+      <DependentUpon>TorneoBD.edmx</DependentUpon>
+      <LastGenOutput>TorneoBD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Modelos\TorneoEntities.tt">
+    <Content Include="Modelos\TorneoBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TorneoEntities.edmx</DependentUpon>
-      <LastGenOutput>TorneoEntities.cs</LastGenOutput>
+      <DependentUpon>TorneoBD.edmx</DependentUpon>
+      <LastGenOutput>TorneoBD.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -266,86 +284,123 @@
     <Compile Include="Formularios\frmSesion.aspx.designer.cs">
       <DependentUpon>frmSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\JugadorModifica.aspx.cs">
+      <DependentUpon>JugadorModifica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\JugadorModifica.aspx.designer.cs">
+      <DependentUpon>JugadorModifica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Canton.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Distrito.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\EQUIPO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\EQUIPO_JUGADOR.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\EQUIPO_PARTIDO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\EQUIPO_TORNEO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\GOLES.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\JUGADOR.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\PARTIDO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Provincia.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Proyecto_BD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto_BD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Proyecto_BD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Proyecto_BD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto_BD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Selecciona_Id_Cliente_Result.cs">
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>TorneoBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_helpdiagrams_Result.cs">
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaCantonesID_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaCantones_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaDistritos_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaProvincias_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaUsuarioCorreoPwd_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaUsuarioID_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sp_RetornaUsuario_Result.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Selecciona_Jugadores_2_Result.cs">
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\sp_Selecciona_Jugadores_Result.cs">
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\sysdiagrams.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\tblUsuario.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelos\TORNEO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\TorneoEntities.Context.cs">
+    <Compile Include="Modelos\TorneoBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TorneoEntities.Context.tt</DependentUpon>
+      <DependentUpon>TorneoBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\TorneoEntities.cs">
+    <Compile Include="Modelos\TorneoBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>TorneoBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\TorneoEntities.Designer.cs">
+    <Compile Include="Modelos\TorneoBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TorneoEntities.edmx</DependentUpon>
+      <DependentUpon>TorneoBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Modelos\USUARIO.cs">
-      <DependentUpon>TorneoEntities.tt</DependentUpon>
+      <DependentUpon>Proyecto_BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

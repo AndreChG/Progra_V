@@ -23,7 +23,7 @@ namespace Campeonato.Modelos
     
         public int id_Canton { get; set; }
         public int id_Provincia { get; set; }
-        public string nombre { get; set; }
+        public string nombreCanton { get; set; }
         public string usuarioCrea { get; set; }
         public Nullable<System.DateTime> fechaCrea { get; set; }
         public string usuarioModifica { get; set; }

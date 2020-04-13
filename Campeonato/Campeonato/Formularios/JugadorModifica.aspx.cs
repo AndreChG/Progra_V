@@ -8,19 +8,17 @@ using Campeonato.Modelos;
 
 namespace Campeonato.Formularios
 {
-    public partial class frmJugadores : System.Web.UI.Page
+    public partial class JugadorModifica : System.Web.UI.Page
     {
         BD_TORNEOEntities2 modelo = new BD_TORNEOEntities2();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (this.IsPostBack==false )
             {
-                this.CargaProvincias();
+                this.CargaDatosEditar();
             }
-            
         }
-
-        void CargaProvincias ()
+        void CargaProvincias()
         {
             List<sp_RetornaProvincias_Result> Provincias =
             this.modelo.sp_RetornaProvincias(null, null).ToList();
@@ -68,42 +66,22 @@ namespace Campeonato.Formularios
         {
             if (this.IsValid)
             {
-                CreaJugador();
+                //CreaJugador();
             }
         }
 
-        void CreaJugador ()
+        void CargaDatosEditar()
         {
-            int id_provincia, id_canton, id_distrito = 0;
-            id_provincia = Convert.ToInt16(this.ddlprovincia.SelectedValue);
-            id_canton = Convert.ToInt16(this.ddlcanton.SelectedValue);
-            id_distrito = Convert.ToInt16(this.ddldistrito.SelectedValue);
-
-            int registros_afect = 0;
-            try
+            string datos = this.Request.QueryString["IDENTIFICACION"];
+            if (string.IsNullOrEmpty(datos))
             {
-                registros_afect = this.modelo.sp_InsertaNuevoJugador
-                    (this.txtnombre.Text, this.txtapellido1.Text, this.txtapellido2.Text, 
-                    Convert.ToInt16(this.txtedad.Text),
-                    Convert.ToDateTime(this.txtfechanacimiento.Text), Convert.ToInt16(this.txtcedula.Text),
-                    Convert.ToInt16(this.txttel1.Text),
-                    Convert.ToInt16(this.txttel2.Text), this.txtemail.Text,
-                    this.txtgenero.Text,
-                     id_provincia, id_canton, id_distrito,
-                    this.txtdireccion.Text
-                    );
+                this.lberrorinserta.Text = "Parametro nulo";
             }
-            catch ( Exception error)
-            {
-
-                this.lberrorinserta.Text="Erro al insertar registro " + error.Message;
-            }
-            if (registros_afect > 0)
-            
-                this.lberrorinserta.Text = "Registro agregado ";
-            
             else
-                this.lberrorinserta.Text = "No se pudo insertar el registro ";
+            {
+                int identificacion = Convert.ToInt16(datos);
+                
+            }
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BD_TORNEOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BD_TORNEOModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Canton">
     <Key>
       <PropertyRef Name="id_Canton" />
     </Key>
     <Property Name="id_Canton" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_Provincia" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreCanton" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -20,7 +20,7 @@
     </Key>
     <Property Name="id_Distrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_Canton" Type="int" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreDistrito" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -109,7 +109,7 @@
       <PropertyRef Name="id_Provincia" />
     </Key>
     <Property Name="id_Provincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreProvincia" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -395,6 +395,11 @@
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="id_CantonInec" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_RetornaCantones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="id_Provincia" Type="int" Mode="In" />
@@ -422,15 +427,11 @@
   <Function Name="sp_RetornaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Usuario" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_Selecciona_Jugadores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="nombre" Type="varchar" Mode="In" />
-    <Parameter Name="primerapellido" Type="varchar" Mode="In" />
-  </Function>
   <Function Name="sp_Selecciona_Jugadores_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="primerapellido" Type="varchar" Mode="In" />
   </Function>
-  <EntityContainer Name="BD_TORNEOModelStoreContainer">
+  <EntityContainer Name="BD_TORNEOModel1StoreContainer">
     <EntitySet Name="Canton" EntityType="Self.Canton" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EQUIPO" EntityType="Self.EQUIPO" Schema="dbo" store:Type="Tables" />

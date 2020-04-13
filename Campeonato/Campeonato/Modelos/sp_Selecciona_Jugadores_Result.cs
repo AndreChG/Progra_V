@@ -10,9 +10,8 @@
 namespace Campeonato.Modelos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class JUGADOR
+    public partial class sp_Selecciona_Jugadores_Result
     {
         public string NOMBRE { get; set; }
         public string APELLIDO1 { get; set; }
@@ -23,14 +22,13 @@ namespace Campeonato.Modelos
         public int TELEFONO_PRINCIPAL { get; set; }
         public Nullable<int> TELEFONO_SECUNDARIO { get; set; }
         public string CORREO_ELECTRONICO { get; set; }
-        public int ID_PROVINCIA { get; set; }
+        public int id_Provincia { get; set; }
+        public string nombre1 { get; set; }
         public int ID_CANTON { get; set; }
+        public string nombre2 { get; set; }
         public int ID_DISTRITO { get; set; }
+        public string nombre3 { get; set; }
         public string GENERO { get; set; }
         public string DIRECCION { get; set; }
-    
-        public virtual Canton Canton { get; set; }
-        public virtual Distrito Distrito { get; set; }
-        public virtual Provincia Provincia { get; set; }
     }
 }

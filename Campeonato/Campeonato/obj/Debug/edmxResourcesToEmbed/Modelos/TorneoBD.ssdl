@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id_Canton" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_Provincia" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreCanton" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -20,7 +20,7 @@
     </Key>
     <Property Name="id_Distrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_Canton" Type="int" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreDistrito" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -109,7 +109,7 @@
       <PropertyRef Name="id_Provincia" />
     </Key>
     <Property Name="id_Provincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreProvincia" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="usuarioCrea" Type="varchar" MaxLength="50" />
     <Property Name="fechaCrea" Type="datetime" />
     <Property Name="usuarioModifica" Type="varchar" MaxLength="50" />
@@ -349,8 +349,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_EliminaCanton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Canton" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_InsertaCanton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Provincia" Type="int" Mode="In" />
@@ -395,6 +420,11 @@
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="id_CantonInec" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="sp_RetornaCantones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="id_Provincia" Type="int" Mode="In" />
@@ -422,14 +452,11 @@
   <Function Name="sp_RetornaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id_Usuario" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_Selecciona_Jugadores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="nombre" Type="varchar" Mode="In" />
-    <Parameter Name="primerapellido" Type="varchar" Mode="In" />
-  </Function>
   <Function Name="sp_Selecciona_Jugadores_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nombre" Type="varchar" Mode="In" />
     <Parameter Name="primerapellido" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BD_TORNEOModelStoreContainer">
     <EntitySet Name="Canton" EntityType="Self.Canton" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />

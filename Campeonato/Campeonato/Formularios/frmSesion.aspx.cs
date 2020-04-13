@@ -10,7 +10,7 @@ namespace Campeonato.Formularios
 {
     public partial class frmSesion : System.Web.UI.Page
     {
-        BD_TORNEOEntities modelo = new BD_TORNEOEntities();
+        BD_TORNEOEntities2 modelo = new BD_TORNEOEntities2();
         protected void Page_Load(object sender, EventArgs e)
         {
 

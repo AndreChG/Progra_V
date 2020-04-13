@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83cedc7559c34d1db90bd9224a31b686" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_TORNEOModel.Canton" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.Distrito" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.EQUIPO" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.EQUIPO_JUGADOR" Width="1.5" PointX="9.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.EQUIPO_PARTIDO" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.EQUIPO_TORNEO" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.GOLES" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.JUGADOR" Width="1.5" PointX="10.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.PARTIDO" Width="1.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.Provincia" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.tblUsuario" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.TORNEO" Width="1.5" PointX="10.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_TORNEOModel.USUARIO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="BD_TORNEOModel.Distrito_ref_Canton" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_Canton_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Canton" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Canton" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Distrito" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Distrito" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_JUGADOR_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_PARTIDO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_PARTIDO_EQUIPO1" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_TORNEO_EQUIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_PARTIDO_PARTIDO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_EQUIPO_TORNEO_TORNEO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_GOLES_TORNEO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_JUGADOR_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_TORNEOModel.FK_PARTIDO_TORNEO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

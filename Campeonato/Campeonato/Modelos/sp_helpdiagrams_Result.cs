@@ -10,14 +10,13 @@
 namespace Campeonato.Modelos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class EQUIPO_JUGADOR
+    public partial class sp_helpdiagrams_Result
     {
+        public string Database { get; set; }
+        public string Name { get; set; }
         public int ID { get; set; }
-        public int ID_JUGADOR { get; set; }
-        public int ID_EQUIPO { get; set; }
-    
-        public virtual EQUIPO EQUIPO { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

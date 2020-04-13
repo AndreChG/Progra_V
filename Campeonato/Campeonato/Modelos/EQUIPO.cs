@@ -29,12 +29,12 @@ namespace Campeonato.Modelos
         public int ID_CANTON { get; set; }
         public int ID_DISTRITO { get; set; }
     
+        public virtual Canton Canton { get; set; }
+        public virtual Distrito Distrito { get; set; }
         public virtual ICollection<EQUIPO_JUGADOR> EQUIPO_JUGADOR { get; set; }
         public virtual ICollection<EQUIPO_PARTIDO> EQUIPO_PARTIDO { get; set; }
         public virtual ICollection<EQUIPO_PARTIDO> EQUIPO_PARTIDO1 { get; set; }
-        public virtual ICollection<EQUIPO_TORNEO> EQUIPO_TORNEO { get; set; }
-        public virtual Canton Canton { get; set; }
-        public virtual Distrito Distrito { get; set; }
         public virtual Provincia Provincia { get; set; }
+        public virtual ICollection<EQUIPO_TORNEO> EQUIPO_TORNEO { get; set; }
     }
 }

@@ -38,7 +38,8 @@
                         <asp:HyperLink ID="hplReportes" runat="server" NavigateUrl="~/Formularios/frmReportes.aspx">Reportes</asp:HyperLink>
                     </p>
                     </h3>
-                    <p>Contenido 2, línea 1</p>
+                    <p>&nbsp;<asp:HyperLink ID="hpllistajugadores" runat="server" NavigateUrl="~/Formularios/frmEditarjugadores.aspx">Ver jugadores:</asp:HyperLink>
+                    </p>
                     <p>Contenido 2, línea 2</p>
                 </div>
                 <div id="Mantenimiento" class="col-lg-4" runat="server">

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BD_TORNEOModelStoreContainer" CdmEntityContainer="BD_TORNEOEntities">
+  <EntityContainerMapping StorageEntityContainer="BD_TORNEOModel1StoreContainer" CdmEntityContainer="BD_TORNEO_Entities">
     <EntitySetMapping Name="Canton">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.Canton">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.Canton">
         <MappingFragment StoreEntitySet="Canton">
           <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
           <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="nombreCanton" ColumnName="nombreCanton" />
           <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
           <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
           <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
@@ -17,11 +17,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Distrito">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.Distrito">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.Distrito">
         <MappingFragment StoreEntitySet="Distrito">
           <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
           <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="nombreDistrito" ColumnName="nombreDistrito" />
           <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
           <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
           <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
@@ -32,7 +32,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EQUIPO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.EQUIPO">
         <MappingFragment StoreEntitySet="EQUIPO">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NOMBRE_EQUIPO" ColumnName="NOMBRE_EQUIPO" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EQUIPO_JUGADOR">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_JUGADOR">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.EQUIPO_JUGADOR">
         <MappingFragment StoreEntitySet="EQUIPO_JUGADOR">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ID_JUGADOR" ColumnName="ID_JUGADOR" />
@@ -53,7 +53,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EQUIPO_PARTIDO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_PARTIDO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.EQUIPO_PARTIDO">
         <MappingFragment StoreEntitySet="EQUIPO_PARTIDO">
           <ScalarProperty Name="ID_PARTIDO" ColumnName="ID_PARTIDO" />
           <ScalarProperty Name="ID_EQUIPO_CASA" ColumnName="ID_EQUIPO_CASA" />
@@ -62,7 +62,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EQUIPO_TORNEO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.EQUIPO_TORNEO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.EQUIPO_TORNEO">
         <MappingFragment StoreEntitySet="EQUIPO_TORNEO">
           <ScalarProperty Name="ID_EQUIPO_TORNEO" ColumnName="ID_EQUIPO_TORNEO" />
           <ScalarProperty Name="ID_TORNEO" ColumnName="ID_TORNEO" />
@@ -72,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GOLES">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.GOLES">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.GOLES">
         <MappingFragment StoreEntitySet="GOLES">
           <ScalarProperty Name="GOLES1" ColumnName="GOLES" />
           <ScalarProperty Name="ID_MARCADOR" ColumnName="ID_MARCADOR" />
@@ -82,7 +82,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="JUGADOR">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.JUGADOR">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.JUGADOR">
         <MappingFragment StoreEntitySet="JUGADOR">
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
@@ -102,7 +102,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PARTIDO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.PARTIDO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.PARTIDO">
         <MappingFragment StoreEntitySet="PARTIDO">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FECHA_PARTIDO" ColumnName="FECHA_PARTIDO" />
@@ -113,10 +113,10 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Provincia">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.Provincia">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.Provincia">
         <MappingFragment StoreEntitySet="Provincia">
           <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="nombreProvincia" ColumnName="nombreProvincia" />
           <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
           <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
           <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
@@ -126,7 +126,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.sysdiagrams">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -136,8 +136,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblUsuario">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.tblUsuario">
+        <MappingFragment StoreEntitySet="tblUsuario">
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TORNEO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.TORNEO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.TORNEO">
         <MappingFragment StoreEntitySet="TORNEO">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NOMBRE_TORNETO" ColumnName="NOMBRE_TORNETO" />
@@ -149,7 +160,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="USUARIO">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.USUARIO">
+      <EntityTypeMapping TypeName="BD_TORNEOModel1.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
           <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
           <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO_USUARIO" />
@@ -159,84 +170,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_EliminaCanton" FunctionName="BD_TORNEOModel.Store.sp_EliminaCanton" />
-    <FunctionImportMapping FunctionImportName="sp_InsertaCanton" FunctionName="BD_TORNEOModel.Store.sp_InsertaCanton" />
-    <FunctionImportMapping FunctionImportName="sp_ModificaCanton" FunctionName="BD_TORNEOModel.Store.sp_ModificaCanton" />
-    <FunctionImportMapping FunctionImportName="sp_RetornaCantones" FunctionName="BD_TORNEOModel.Store.sp_RetornaCantones">
+    <FunctionImportMapping FunctionImportName="sp_EliminaCanton" FunctionName="BD_TORNEOModel1.Store.sp_EliminaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_InsertaCanton" FunctionName="BD_TORNEOModel1.Store.sp_InsertaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_InsertaNuevoJugador" FunctionName="BD_TORNEOModel1.Store.sp_InsertaNuevoJugador" />
+    <FunctionImportMapping FunctionImportName="sp_Jugador_Update" FunctionName="BD_TORNEOModel1.Store.sp_Jugador_Update" />
+    <FunctionImportMapping FunctionImportName="sp_ModificaCanton" FunctionName="BD_TORNEOModel1.Store.sp_ModificaCanton" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BD_TORNEOModel1.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaCantones" FunctionName="BD_TORNEOModel1.Store.sp_RetornaCantones" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaCantonesID" FunctionName="BD_TORNEOModel1.Store.sp_RetornaCantonesID" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaDistritos" FunctionName="BD_TORNEOModel1.Store.sp_RetornaDistritos" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaProvincias" FunctionName="BD_TORNEOModel1.Store.sp_RetornaProvincias" />
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="BD_TORNEOModel1.Store.sp_RetornaUsuario">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaCantones_Result">
-          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
-          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
-          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
-          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
-          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
-          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
-          <ScalarProperty Name="id_CantonInec" ColumnName="id_CantonInec" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaCantonesID" FunctionName="BD_TORNEOModel.Store.sp_RetornaCantonesID">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaCantonesID_Result">
-          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
-          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
-          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
-          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
-          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
-          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
-          <ScalarProperty Name="id_CantonInec" ColumnName="id_CantonInec" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaDistritos" FunctionName="BD_TORNEOModel.Store.sp_RetornaDistritos">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaDistritos_Result">
-          <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
-          <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="Canton" ColumnName="Canton" />
-          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
-          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
-          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
-          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
-          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
-          <ScalarProperty Name="id_DistritoInec" ColumnName="id_DistritoInec" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaProvincias" FunctionName="BD_TORNEOModel.Store.sp_RetornaProvincias">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaProvincias_Result">
-          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
-          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
-          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
-          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
-          <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="tblUsuario">
-      <EntityTypeMapping TypeName="BD_TORNEOModel.tblUsuario">
-        <MappingFragment StoreEntitySet="tblUsuario">
-          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
-          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
-          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
-          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
-          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuario">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuario_Result">
+        <ComplexTypeMapping TypeName="BD_TORNEOModel1.sp_RetornaUsuario_Result">
           <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
           <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
           <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
@@ -245,9 +191,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioCorreoPwd" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuarioCorreoPwd">
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioCorreoPwd" FunctionName="BD_TORNEOModel1.Store.sp_RetornaUsuarioCorreoPwd">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuarioCorreoPwd_Result">
+        <ComplexTypeMapping TypeName="BD_TORNEOModel1.sp_RetornaUsuarioCorreoPwd_Result">
           <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
           <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
           <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
@@ -256,9 +202,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioID" FunctionName="BD_TORNEOModel.Store.sp_RetornaUsuarioID">
+    <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioID" FunctionName="BD_TORNEOModel1.Store.sp_RetornaUsuarioID">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_RetornaUsuarioID_Result">
+        <ComplexTypeMapping TypeName="BD_TORNEOModel1.sp_RetornaUsuarioID_Result">
           <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
           <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
           <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
@@ -267,11 +213,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_InsertaNuevoJugador" FunctionName="BD_TORNEOModel.Store.sp_InsertaNuevoJugador" />
-    <FunctionImportMapping FunctionImportName="sp_Jugador_Update" FunctionName="BD_TORNEOModel.Store.sp_Jugador_Update" />
-    <FunctionImportMapping FunctionImportName="sp_Selecciona_Jugadores1" FunctionName="BD_TORNEOModel.Store.sp_Selecciona_Jugadores">
+    <FunctionImportMapping FunctionImportName="sp_Selecciona_Jugadores_2" FunctionName="BD_TORNEOModel1.Store.sp_Selecciona_Jugadores_2">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_Selecciona_Jugadores1_Result">
+        <ComplexTypeMapping TypeName="BD_TORNEOModel1.sp_Selecciona_Jugadores_2_Result">
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
           <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
@@ -282,34 +226,11 @@
           <ScalarProperty Name="TELEFONO_SECUNDARIO" ColumnName="TELEFONO_SECUNDARIO" />
           <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
           <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+          <ScalarProperty Name="nombreProvincia" ColumnName="nombreProvincia" />
           <ScalarProperty Name="ID_CANTON" ColumnName="ID_CANTON" />
-          <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+          <ScalarProperty Name="nombreCanton" ColumnName="nombreCanton" />
           <ScalarProperty Name="ID_DISTRITO" ColumnName="ID_DISTRITO" />
-          <ScalarProperty Name="nombre3" ColumnName="nombre3" />
-          <ScalarProperty Name="GENERO" ColumnName="GENERO" />
-          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_Selecciona_Jugadores_2" FunctionName="BD_TORNEOModel.Store.sp_Selecciona_Jugadores_2">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="BD_TORNEOModel.sp_Selecciona_Jugadores_2_Result">
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-          <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
-          <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
-          <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
-          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
-          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
-          <ScalarProperty Name="TELEFONO_PRINCIPAL" ColumnName="TELEFONO_PRINCIPAL" />
-          <ScalarProperty Name="TELEFONO_SECUNDARIO" ColumnName="TELEFONO_SECUNDARIO" />
-          <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
-          <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
-          <ScalarProperty Name="nombre1" ColumnName="nombre1" />
-          <ScalarProperty Name="ID_CANTON" ColumnName="ID_CANTON" />
-          <ScalarProperty Name="nombre2" ColumnName="nombre2" />
-          <ScalarProperty Name="ID_DISTRITO" ColumnName="ID_DISTRITO" />
-          <ScalarProperty Name="nombre3" ColumnName="nombre3" />
+          <ScalarProperty Name="nombreDistrito" ColumnName="nombreDistrito" />
           <ScalarProperty Name="GENERO" ColumnName="GENERO" />
           <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
         </ComplexTypeMapping>
